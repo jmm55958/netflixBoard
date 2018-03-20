@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Netflix Discussion Board</title>
+        <link rel="stylesheet" href="netflixLoginStyle.css">
+        
+        <script LANGUAGE="JavaScript">
+        
+            //this variable is used to validate the address --> email should follow format string@string.string
+            //thanks to regexlib.com!
+            var reEmail = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+        
+            function validateForm() {
+                var email = document.forms["myForm"]["email"].value;
+                
+                //validates email agaisnt regex 
+                if (email.length == 0 || !reEmail.test(email)){
+                    alert("Please enter a valid email!");
+                    return false;
+                }
+                              
+                var password = document.forms["myForm"]["password"].value;
+            }//validateForm
+        </script>
+        
+    </head>
+
+    <body>
+        <div style="color:#f7f7f7">
+            <img src="netflix1.jpg" alt="netflix" style="width:160px;height:80px;position: absolute;top: 0px;right: 0px;">
+            <h1> Join the Netflix Discussion Board! </h1>
+            <h2> Discuss the hottest shows on Netflix alongside fans from around the world!</h2>
+        </div>
+        
+        <div class="form">
+            <form name="myForm" action="netflixHomepage.html" onsubmit="return validateForm()" style="color:#f7f7f7">
+                E-Mail: <input type="text" name="email" required><br>
+                Password: <input type="password" name="password" required><br>
+                <input type="submit" value="Submit"><br>
+            </form>
+        </div>
+        
+    
+    </body>
+
+</html>
